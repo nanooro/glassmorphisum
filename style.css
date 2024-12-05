@@ -1,0 +1,120 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center contents vertically */
+  flex-direction: column; /* Stack elements vertically */
+  background-image: url("gradient_bg.jpg"); /* Use your gradient_bg.jpg as the background */
+  background-size: cover; /* Ensure the background covers the whole viewport */
+}
+
+.inputTask p {
+  margin: 0;
+  position: relative;
+  z-index: 1; /* Ensure text stays above the blur effect */
+  color: #333; /* Dark text color for readability */
+  font-size: 16px;
+  line-height: 1.5;
+  text-align: justify; /* Optional: Justify text alignment */
+}
+
+.inputTask {
+  margin-top: 20px;
+  width: 300px;
+  max-width: 800px;
+  padding: 20px;
+  border-radius: 10px; /* Add rounded corners */
+  background-color: rgba(255, 255, 255, 0.3); /* Add a semi-transparent overlay */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* Add shadow for better visibility */
+  overflow: hidden; /* Confine content within the boundaries */
+  backdrop-filter: blur(10px); /* Blur the background behind this div */
+}
+
+.addTask {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  width: 300px;
+  color: white;
+}
+
+.task {
+  margin-top: 20px;
+  width: 300px;
+  max-width: 800px;
+  padding: 20px;
+  border-radius: 10px; /* Add rounded corners */
+  background-color: rgba(255, 255, 255, 0.3); /* Add a semi-transparent overlay */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* Add shadow for better visibility */
+  overflow: hidden; /* Confine content within the boundaries */
+  backdrop-filter: blur(10px); /* Blur the background behind this div */
+  color: #333; /* Dark text color for readability */
+  text-align: center;
+  word-wrap: wrap; /* Ensure long text breaks and wraps within the box */
+  max-height: 200px; /* Limit the height of the task box */
+  overflow-y: auto; /* Allow scrolling if content exceeds max height */
+}
+
+.task-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+  padding: 10px 15px;
+  border-radius: 10px;
+  margin-top: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, opacity 0.3s ease; /* Smooth animations */
+  opacity: 1;
+  transform: scale(1);
+}
+
+.task-item {
+  margin: 0;
+  color: #333;
+  font-size: 16px;
+  flex-grow: 1; /* Pushes the button to the end */
+}
+
+.delete-btn {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  outline: none;
+  color: #333;
+  font-size: 14px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  z-index: 1; /* Ensure the button remains visible above animations */
+}
+
+.delete-btn:hover {
+  background-color: rgba(255, 0, 0, 0.3);
+  color: white;
+  box-shadow: 0 4px 15px rgba(255, 0, 0, 0.5);
+}
+
+/* Animation for new tasks */
+.new-task {
+  transform: scale(0.9);
+  opacity: 0;
+  animation: fadeIn 0.3s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Animation for task removal */
+.removing-task {
+  transform: scale(0.9);
+  opacity: 0;
+}
